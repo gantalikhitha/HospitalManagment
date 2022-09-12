@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>UpdateViewPatientDetails</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+
+<body style="background-color:#ebebe0;"> 
+<h1 align="center">Update ViewPatients Details</h1>
+<div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-offset-4">
+   
+    
+     <form th:action="@{/saveViewPatients}" th:object="${pat}" method="post" >
+     
+     <label for="pid" class="form-label">Pid</label>
+    <input type="text" name="pid"  th:value="${pat.pid}"class="form-control" id="pid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+      
+    <label for="hid" class="form-label">Hid</label>
+    <input type="hidden" name="hospital.hid"  th:value="${pat.hospital.hid}"class="form-control" id="pid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+    
+    <label for="hid" class="form-label">Hname</label>
+    <input type="hidden" name="hospital.hname"  th:value="${pat.hospital.hname}"class="form-control" id="pid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+        
+     
+    <label for="name" class="form-label">Name</label>
+    <input type="text" name="name"  th:value="${pat.name}"class="form-control" id="pname" aria-describedby="emailHelp" placeholder="Enter patient name"   required>
+     
+     
+     <label for="mobileno" class="form-label">MobileNo</label>
+    <input type="text" name="mobileno" th:value="${pat.mobileno}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter mobileno"   required>
+     
+    <label for="age" class="form-label">Age</label>
+    <input type="text" name="age" th:value="${pat.age}" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter age"   required>
+   
+    <label for="gender" class="form-label">Gender</label>
+    <input type="text" name="gender"  th:value="${pat.gender}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter gender"   required>
+    
+    <label for="email" class="form-label">Email</label>
+    <input type="text" name="email"  th:value="${pat.email}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter email"   required>
+    
+    
+   
+    
+   <div class="form-group"><br>
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="#" th:href="@{/viewPatients}" class="btn btn-primary">Back</a>      
+      </div>
+      
+      
+
+    
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

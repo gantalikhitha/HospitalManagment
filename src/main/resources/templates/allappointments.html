@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>AppointmentList</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<body style="background-color:#e5e5cc;">
+<nav class="navbar navbar-expand-lg" style="background-color: #ffdb4d;" >
+<li class="nav" style="float: right">
+   <a class="navbar-brand" href="#" th:href="@{/hos/hit}">Home</a>
+    <a class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>
+    </li>
+    </nav>
+    
+<div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-4">
+<h1>AllAppointments</h1>
+
+<div class="container">
+<a th:href="@{/user/allappointments}"></a>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Aid</th>
+      <th scope="col">PatientName</th>
+      <th scope="col">DoctorName</th>
+      <th scope="col">MobileNo</th>
+      <th scope="col">Time</th>
+      <th scope="col">Date</th>
+      <th scope="col">Email</th>
+      <th scope="col">AppointmentStatus</th> 
+
+<!--       <th scope="col">SelectAction</th>
+ -->      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="appo:${appo}">
+    
+    			
+                <td th:text="${appo.aid}"></td>
+                <td th:text="${appo.patientname}"></td>
+                <td th:text="${appo.doctorname}"></td>
+                <td th:text="${appo.mobileno}"></td>
+                <td th:text="${appo.time}"></td>
+                <td th:text="${appo.date}"></td>
+                <td th:text="${appo.email}"></td>
+                <td th:text="${appo.appointmentstatus}"></td>
+<!--                 <td><a th:href="@{/user/getting/{aid}(aid=${appo.aid})}" th:style="${'color: red;'}">Select</a></td>
+ -->            </tr>
+  </tbody>
+</table>
+<!-- <a href="#" th:href="@{/user/userhome}" class="btn btn-success">Back</a> -->
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

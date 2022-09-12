@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>DoctorsList</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body style="background-color: #ebebe0;">
+<nav class="navbar navbar-expand-lg" style="background-color: #d6e0f5;" >
+<li class="nav" style="float: right">
+   <a class="navbar-brand" href="#" th:href="@{/hos/hit}">Home</a>
+    <a class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>
+   </li>
+    </nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-4">
+			
+				<h1>Doctor List</h1>
+
+				<div class="container">
+					<a th:href="@{/getdoctors}"></a>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Did</th>
+								<th scope="col">DoctorName</th>
+								<th scope="col">MobileNo</th>
+								<th scope="col">Email</th>
+								<th scope="col">Specialization</th>
+								
+								<th scope="col">Update</th>
+								<th scope="col">Delete</th>
+							</tr>
+						</thead>
+
+
+						<tbody>
+							<tr th:each="hos:${hos}">
+
+								<td th:text="${hos.did}"></td>
+								<td th:text="${hos.doctorname}"></td>
+								<td th:text="${hos.mobileno}"></td>
+								<td th:text="${hos.email}"></td>
+								<td th:text="${hos.specialization}"></td>
+								
+								<td><a href="#" th:href="@{/update/{did}(did=${hos.did})}"
+									class="btn btn-success" onclick="if (!(confirm('Are you sure you want to Update this doctor details?'))) return false">Update</a></td>
+									
+								<td><a href="#" th:href="@{/delete/{did}(did=${hos.did})}"
+									class="btn btn-warning" onclick="if (!(confirm('Are you sure you want to Delete this doctor Details?'))) return false">Delete</a></td>
+									
+									
+							</tr>
+							
+						</tbody>
+						
+					</table>
+					<a href="#" th:href="@{/doctor}" class="btn btn-danger">Back</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

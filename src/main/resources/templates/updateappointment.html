@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>UpdateAppointment</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color:#ebebe0;"> 
+<h1 align="center">Update Appointment Details</h1>
+<div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-offset-4">
+   
+    
+     <form th:action="@{/saveAppointment}" th:object="${appo}" method="post" >
+     
+     <label  for="aid" class="form-label">Aid</label>
+     <input type="text" name="aid"  th:value="${appo.aid}"class="form-control" id="aid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+     
+     <label for="hid" class="form-label">Hid</label>
+     <input type="hidden" name="hospital.hid"  th:value="${appo.hospital.hid}"class="form-control" id="aid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+     <input type="hidden" name="hospital.hname"  th:value="${appo.hospital.name}"class="form-control" id="aid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+       
+     
+    <label for="patientname" class="form-label">PatientName</label>
+    <input type="text" name="patientname"  th:value="${appo.patientname}"class="form-control" id="doctorname" aria-describedby="emailHelp" placeholder="Enter patient name"   required>
+     
+     <label for="doctorname" class="form-label">DoctorName</label>
+    <input type="text" name="doctorname"  th:value="${appo.doctorname}"class="form-control" id="doctorname" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+     
+     <label for="mobileno" class="form-label">MobileNo</label>
+    <input type="text" name="mobileno" th:value="${appo.mobileno}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter mobileno"   required>
+     
+    <label for="time" class="form-label">Time</label>
+    <input type="text" name="time" th:value="${appo.time}" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter time"   required>
+   
+   <label for="date" class="form-label">Date</label>
+    <input type="text" name="date"  th:value="${appo.date}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter date"   required>
+    
+    <label for="email" class="form-label">Email</label>
+    <input type="text" name="email"  th:value="${appo.email}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter email"   required>
+    
+    
+    <label for="appointmentstatus" class="form-label">AppointmentStatus</label>
+    <input type="text" name="date"  th:value="${appo.appointmentstatus}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter appointmentstatus"   required>
+    
+    
+    
+   <div class="form-group"><br>
+      <button type="submit" class="btn btn-success">Update</button>
+       <a href="#" th:href="@{/getappointments}" class="btn btn-primary">Back</a>     
+      </div>
+      
+      
+
+    
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

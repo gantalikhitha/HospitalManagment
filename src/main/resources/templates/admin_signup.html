@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>AdminSignup</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<body style="background-color:#e0ebeb">
+<div class="container">  
+  <div class="row">
+   <div class="col-sm-4"><br><br>
+   
+<h1>Admin_Signup</h1><br>
+     
+     <form th:action="@{/hos/adminpost}" method="post" name="myForm" th:onsubmit="return formvalidation()" th:object="${user}">
+     <div>
+    <label for="name" class="form-label"> EnterName</label>
+    <input type="text" name="name" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter  name">
+     <span id="error-name"></span>
+     </div>
+     
+     <div>
+     <label for="address" class="form-label">EnterAddress</label>
+    <input type="text" name="address" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter address">
+     <span id="erroraddress"></span>
+     </div>
+     
+     <div>
+    <label for="email" class="form-label">Enter email</label>
+    <input type="text" name="email" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter email">
+    <span id="erroremail"></span>
+    </div>
+    
+    <div>
+    <label for="password" class="form-label">Enter password</label>
+    <input type="password" name="password" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter password">
+    <span id="errorpsw"></span>
+    </div>
+    <!-- <label for="dname" class="form-label">Enter DoctorName</label>
+    <input type="text" name="doctor.doctorname" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter departmentname"   required>
+    
+    <label for="pname" class="form-label">Enter patientName</label>
+    <input type="text" name="patient.pname" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter departmentname"   required>
+     
+     
+    <label for="time" class="form-label">Enter time</label>
+    <input type="text" name="appointment.time" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter time"   required> -->
+   
+     
+     <div class="form-group"><br>
+      <button type="submit" class="btn btn-success">Register</button>
+      <a href="#" th:href="@{/hos/hit}" class="btn btn-success">Back</a>
+      <span>Already registered? <a href="/" th:href="@{/hos/admin_login}">Login
+        here</a></span>
+        </div>
+    </form>
+    </div><br><br><br>
+    <div>
+    <img src="https://cache.careers360.mobi/media/presets/860X430/article_images/2021/1/8/NMAT-2020-Additional-Registration-Window.jpg" width=700>
+    </div>
+    
+    
+   </div>
+  </div>
+ 
+ 
+ <script src="/js/adminregister.js"></script>
+ 
+</body>
+</html>

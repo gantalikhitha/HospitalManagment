@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Appointment</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<head>
+<meta charset="ISO-8859-1">
+<title>UserAppointment</title>
+</head>
+<body style="background-color:#ffe6e6;"> 
+<nav class="navbar navbar-expand-lg" style="background-color: #ffdb4d;" >
+<li class="nav" style="float: right">
+   <a class="navbar-brand" href="#" th:href="@{/hos/hit}">Home</a>
+    <a class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>
+    </li>
+    </nav>
+<div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-offset-4">
+   <h1>Appointment</h1>
+     <form th:action="@{/user/add}" method="post" name="myForm" th:onsubmit="return validate()" >
+     
+     <div>
+    <label for="patientname" class="form-label">PatientName</label>
+    <input type="text" name="patientname" class="form-control" id="patientname" aria-describedby="emailHelp" placeholder="Enter patient name">
+     <span id="errorname"></span>
+     </div>
+     
+     <div>
+     <label for="doctorname" class="form-label">DoctorName</label>
+    <input type="text" name="doctorname" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter doctor name">
+     <span id="error-name"></span>
+     </div>
+     
+     <div>
+    <label for="mobileno" class="form-label">MobileNo</label>
+    <input type="text" name="mobileno" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter mobileno">
+    <span id="error-mobileno"></span>
+    </div>
+    
+    <div>
+    <label for="time" class="form-label">Time</label>
+    <input type="text" name="time" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter time">
+    <span id="errortime"></span>
+    </div>
+    
+    <div>
+    <label for="date" class="form-label">Date</label>
+    <input type="date" name="date" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter date">
+    <span id="error-date"></span>
+    </div>
+    
+    <div>
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter email">
+    <span id="error-date"></span>
+    </div>
+    
+    <!-- 
+    <div>
+    <label for="appointmentstatus" class="form-label"></label>
+    <input type="hidden" name="appointmentstatus" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter Appointmentstatus">
+    
+    </div> -->
+    
+    <div class="form-group"><br>
+      <button type="submit" class="btn btn-success">submit</button>
+      <a href="#" th:href="@{/adminhome}" class="btn btn-success">Back</a>
+      </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <script src="/js/patients.js"></script>
+    </body>
+    </html>

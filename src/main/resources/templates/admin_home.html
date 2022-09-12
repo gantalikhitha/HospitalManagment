@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>AdminHome</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+</head>
+<body style="background-color:#e5e5cc;">
+<h2 align="center">AdminHomePage</h2>
+
+<nav class="navbar navbar-expand-lg" style="background-color: #c3f0f7;">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      
+ 
+      <li class="nav-item dropdown">
+       <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Doctor</a>
+          
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+          <a class="dropdown-item" href="/doctor">AddDoctor</a>
+          <a class="dropdown-item" href="/getdoctors">DoctorList</a>
+          
+        </div>
+     </li>
+      
+      <li class="nav-item dropdown">
+       <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Patient</a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+          <a class="dropdown-item" href="/patient">AddPatient</a>
+          <a class="dropdown-item" href="/getpatients">PatienttList</a>
+          
+        </div>
+        </li>
+     
+     <li class="nav-item dropdown">
+      <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Appointment
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/appo">AddAppointment</a>
+          <a class="dropdown-item" href="/getappointments">AppointmentList</a>
+          </div>
+          </li>
+          
+       <li>
+       <a class="navbar-brand" href="/billing">BillDetails</a>
+       </li>
+       
+       
+       
+       <li>
+       <a class="navbar-brand" href="/logout">Logout</a>
+       <a class="navbar-brand" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" sec:authentication="name"></a>
+           </li>
+           </ul>
+           </div>  
+   
+</nav>
+<div class="float-left">
+<img src="https://www.drmanojsent.com/images/services/childrens2.jpg" height=690 width=1582>
+</div>
+ </body>
+</html>

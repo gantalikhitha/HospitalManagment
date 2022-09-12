@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>UpdateDoctor</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color:#ebebe0;"> 
+<h1 align="center">Update Doctor Details</h1>
+<div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-offset-4">
+   
+    
+     <form th:action="@{/saveDoctor}" th:object="${hos}" method="post" >
+     
+    <label for="did" class="form-label">Did</label>
+    <input type="text" name="did"  th:value="${hos.did}"class="form-control" id="doctorname" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+     
+    <label for="hid" class="form-label">Hid</label>
+    <input type="hidden" name="hospital.hid"  th:value="${hos.hospital.hid}"class="form-control" id="hid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+    <input type="hidden" name="hospital.hid"  th:value="${hos.hospital.name}"class="form-control" id="hid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+      
+     
+    <label for="doctorname" class="form-label">DoctorName</label>
+    <input type="text" name="doctorname"  th:value="${hos.doctorname}"class="form-control" id="doctorname" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+     
+    <label for="mobileno" class="form-label">MobileNo</label>
+    <input type="text" name="mobileno" th:value="${hos.mobileno}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter mobileno"   required>
+     
+    <label for="specialization" class="form-label">specialization</label>
+    <input type="text" name="specialization" th:value="${hos.specialization}" class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter specialization"   required>
+   
+    <label for="email" class="form-label">Email</label>
+    <input type="text" name="email"  th:value="${hos.email}"class="form-control" id="name_field" aria-describedby="emailHelp" placeholder="Enter email"   required>
+    
+    
+    
+   <div class="form-group"><br>
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="#" th:href="@{/getdoctors}" class="btn btn-primary">Back</a>
+      </div>
+      
+      
+
+    
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

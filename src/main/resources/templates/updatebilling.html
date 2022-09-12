@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>UpdateDoctor</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color:#ebebe0;"> 
+<h1 align="center">Update Billing Details</h1>
+<div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-offset-4">
+   
+    
+     <form th:action="@{/bill}" th:object="${pat}" method="post" >
+     
+    <label for="bid" class="form-label">Bid</label>
+    <input type="text" name="bid" th:value="${pat.bid}" class="form-control" id="bid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required>
+     
+   <!--  <label for="patientid" class="form-label">PatientId</label>
+    <input type="text" name="patientid" th:value="${pat.patientid}" class="form-control" id="patientid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required> 
+      -->
+    <label for="doctorid" class="form-label">DoctorId</label>
+    <input type="text" name="doctorid" th:value="${pat.doctorid}" class="form-control" id="doctorid" aria-describedby="emailHelp" placeholder="Enter doctor name"   required> 
+      
+     <label for="pname" class="form-label">PatientName</label>
+    <input type="text" name="pname" th:value="${pat.pname}" class="form-control" id="pname" aria-describedby="emailHelp" placeholder="Enter doctor name"   required> 
+     
+     <label for="totalamount" class="form-label">TotalAmount</label>
+    <input type="text" name="totalamount" th:value="${pat.totalamount}" class="form-control" id="totalamount" aria-describedby="emailHelp" placeholder="Enter doctor name"   required> 
+     
+     <div class="form-group"><br>
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="#" th:href="@{/getpatients}" class="btn btn-primary">Back</a>
+      </div>
+      
+     
+     </form>
+     </div>
+     </div>
+     </div>
+</body>
+</html>

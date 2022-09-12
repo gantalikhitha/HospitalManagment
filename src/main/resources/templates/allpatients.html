@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>AllPatients</title>
+<link rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous">
+</head>
+<body style="background-color:#e6ffe6;">
+
+<nav class="navbar navbar-expand-lg" style="background-color: #e6ccff;" >
+<li class="nav" style="float: right">
+   <a class="navbar-brand" href="#" th:href="@{/hos/hit}">Home</a>
+    <a class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>
+    </li>
+    </nav>
+    
+ <div class="container">  
+  <div class="row">
+   <div class="col-md-4 col-md-4">
+<h1>AllPatients</h1>
+
+<div class="container">
+<a th:href="@{/user/allpatients}"></a>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">PId</th>
+      <th scope="col">PatientName</th>
+      <th scope="col">MobileNo</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+   <tbody>
+    <tr th:each="pat:${pat}">
+                <td th:text="${pat.pid}"></td>
+                <td th:text="${pat.pname}"></td>
+                <td th:text="${pat.mobileno}"></td>
+                <td th:text="${pat.age}"></td>
+                <td th:text="${pat.gender}"></td>
+                <td th:text="${pat.email}"></td>
+            </tr>
+  </tbody> 
+</table>
+<!-- <a href="#" th:href="@{/user/userhome}" class="btn btn-warning">Back</a> -->
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
